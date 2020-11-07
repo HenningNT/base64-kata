@@ -30,10 +30,10 @@ namespace Base64Kata
                 var slice = span.Slice(inputIndex, 3);
                 var concated = slice[0] << 16 | slice[1] << 8 | slice[2];
 
-                result[resultIndex++] = lookup[(concated >> 3 * 6) & 0x3F];
-                result[resultIndex++] = lookup[(concated >> 2 * 6) & 0x3F];
-                result[resultIndex++] = lookup[(concated >> 1 * 6) & 0x3F];
-                result[resultIndex++] = lookup[ concated           & 0x3F];
+                result[resultIndex++] = lookup[(concated >> 18) & 0x3F];
+                result[resultIndex++] = lookup[(concated >> 12) & 0x3F];
+                result[resultIndex++] = lookup[(concated >>  6) & 0x3F];
+                result[resultIndex++] = lookup[ concated        & 0x3F];
 
                 remaining -= 3;
                 inputIndex += 3;
@@ -45,10 +45,10 @@ namespace Base64Kata
                 // Convert last group
                 var slice = span.Slice(inputIndex, 2);
                 var concated = slice[0] << 16 | slice[1] << 8;
-
-                result[resultIndex++] = lookup[(concated >> 3 * 6) & 0x3F];
-                result[resultIndex++] = lookup[(concated >> 2 * 6) & 0x3F];
-                result[resultIndex++] = lookup[(concated >> 1 * 6) & 0x3F];
+                
+                result[resultIndex++] = lookup[(concated >> 18) & 0x3F];
+                result[resultIndex++] = lookup[(concated >> 12) & 0x3F];
+                result[resultIndex++] = lookup[(concated >>  6) & 0x3F];
                 result[resultIndex]   = '=';
             }
 
@@ -59,8 +59,8 @@ namespace Base64Kata
                 var slice = span.Slice(inputIndex, 1);
                 var concated = slice[0] << 16;
 
-                result[resultIndex++] = lookup[(concated >> 3 * 6) & 0x3F];
-                result[resultIndex++] = lookup[(concated >> 2 * 6) & 0x3F];
+                result[resultIndex++] = lookup[(concated >> 18) & 0x3F];
+                result[resultIndex++] = lookup[(concated >> 12) & 0x3F];
                 result[resultIndex++] = '=';
                 result[resultIndex]   = '=';
             }
