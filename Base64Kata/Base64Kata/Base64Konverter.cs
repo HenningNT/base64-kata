@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace Base64Kata
 {
     public class Base64Konverter
