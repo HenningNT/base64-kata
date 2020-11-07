@@ -33,5 +33,11 @@ namespace Benchmarker
         {
             var actual = Base64Konverter.ToBase64v3(testString);
         }
+
+        [Benchmark]
+        public void testv4()
+        {
+            var actual = Base64Konverter.ToBase64v4(testString);
+        }
     }
 }
