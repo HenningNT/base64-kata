@@ -5,12 +5,13 @@ namespace Base64Kata
 {
     public class Base64Konverter
     {
-        private static readonly char[] lookup;
+        private static readonly char[] lookup= new char[64]
+          { 'A','B','C','D','E','F','G','H','I','J','K','L','M',
+            'N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+            'a','b','c','d','e','f','g','h','i','j','k','l','m',
+            'n','o','p','q','r','s','t','u','v','w','x','y','z',
+            '0','1','2','3','4','5','6','7','8','9','+','/'};
 
-        static Base64Konverter()
-        {
-            lookup = GenerateBase64LookupTable();
-        }
         public static string ToBase64(in string theString)
         {
             var span = theString.AsSpan();
@@ -66,19 +67,6 @@ namespace Base64Kata
             }
 
             return new string(result);
-        }
-
-        /// <summary>Generate array with valid Base64 values (A-Z, a-z, 0-9 and +/)
-        /// Thanks to Frode Hus https://github.com/FrodeHus/base64-kata/blob/2451df106f583f22c77a527f70f5d1e7fab7c391/Program.cs#L50
-        /// </summary>
-        private static char[] GenerateBase64LookupTable()
-        {
-            //generate array with A-Z, a-z, 0-9 and +/
-            var uppercase = Enumerable.Range(65, 26).Select(c => Convert.ToChar(c));
-            var lowercase = Enumerable.Range(97, 26).Select(c => Convert.ToChar(c));
-            var numbers = Enumerable.Range(48, 10).Select(c => Convert.ToChar(c));
-            var special = new[] { '+', '/' };
-            return uppercase.Concat(lowercase).Concat(numbers).Concat(special).ToArray();
         }
     }
 }
