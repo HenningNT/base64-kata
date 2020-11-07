@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30626.31
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base64Kata", "Base64Kata\Base64Kata.csproj", "{06A3A67A-8E67-4A11-A21A-CFD0ABE9A933}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Base64Kata", "Base64Kata\Base64Kata.csproj", "{06A3A67A-8E67-4A11-A21A-CFD0ABE9A933}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base64Kata.Tests", "Base64Kata.Tests\Base64Kata.Tests.csproj", "{43ACD30C-1D4A-4491-9F4C-499FC88B12EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Base64Kata.Tests", "Base64Kata.Tests\Base64Kata.Tests.csproj", "{43ACD30C-1D4A-4491-9F4C-499FC88B12EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarker", "Benchmarker\Benchmarker.csproj", "{538E83D4-484D-4050-A524-F69EC5EE892B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{43ACD30C-1D4A-4491-9F4C-499FC88B12EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43ACD30C-1D4A-4491-9F4C-499FC88B12EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43ACD30C-1D4A-4491-9F4C-499FC88B12EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{538E83D4-484D-4050-A524-F69EC5EE892B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{538E83D4-484D-4050-A524-F69EC5EE892B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{538E83D4-484D-4050-A524-F69EC5EE892B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{538E83D4-484D-4050-A524-F69EC5EE892B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
